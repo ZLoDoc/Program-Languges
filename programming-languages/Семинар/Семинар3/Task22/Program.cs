@@ -4,20 +4,25 @@
 // 5 -> 1, 4, 9, 16, 25.
 // 2 -> 1,4
 
-void SquareTable(int num)
+int[] SquareTable(int num)
 {
 
-    int[] square=new int[num];
-    for (int index = 0; index <= num; index++)
+    int[] square = new int[num];
+    for (int index = 0; index <= num - 1; index++)
     {
-        square[index]=index*index;
-        //Console.WriteLine(index);
-        Console.WriteLine(square[index]);
-
+        square[index] = index * index;
     }
-
+    return square;
 }
 
 Console.Write("Imput N :");
-int number=Convert.ToInt32(Console.ReadLine());
-SquareTable(number+1);
+int number = Convert.ToInt32(Console.ReadLine());
+var squareMass = SquareTable(number + 1);
+// for (int index = 0; index < squareMass.Length - 1; index++)
+// {
+//     Console.Write($"{squareMass[index]} ");
+// }
+foreach(int indexValue in squareMass)
+{
+     Console.Write($"{indexValue}  ");
+}

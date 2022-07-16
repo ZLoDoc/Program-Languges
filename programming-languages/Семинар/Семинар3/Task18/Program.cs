@@ -30,7 +30,7 @@ void Decart(int Quart, out int x, out int y)
     y = b;
 }
 
-Console.Write("Impet the number of quarter :");
+Console.Write("Imput the number of quarter :");
 int number = Convert.ToInt32(Console.ReadLine());
 
 Decart(number, out int x, out int y);

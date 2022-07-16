@@ -23,5 +23,5 @@ int a1=Convert.ToInt32(Console.ReadLine());
 Console.Write("Y2= ");
 int b1=Convert.ToInt32(Console.ReadLine());
 num = Dist(a, b, a1, b1);
-Console.Write(num);
+Console.Write($"Расстояние от точки А({a},{b}) до точки B ({a1},{b1}) равно {num}");
 
