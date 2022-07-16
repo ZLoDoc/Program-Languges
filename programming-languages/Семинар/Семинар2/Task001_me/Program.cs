@@ -1,4 +1,5 @@
-﻿void RndMass(int[] Mass)
+﻿// Определение максимального и минимального значения матрицы и их индексов
+void RndMass(int[] Mass)
 {
     int strange = Mass.Length;
     for (int index = 0; index < strange; index++)
