@@ -3,21 +3,20 @@
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
-// int i = 123;
-// char[] arr = i.ToString().ToCharArray();
-// Console.WriteLine(arr[1]);
-
-void StringToArray(int num)
+bool CheckPolindrom(string text)
 {
-
-    char[] array = num.ToString().ToCharArray();
-   for (int index=0; index <= array.Length-1; index++)
-   {
-               
-               
-               
-                Console.Write($"{array[index]} ");
-   }
+    bool result = true;
+    int length=text.Length;
+    for (int i = 0; i < (length / 2); i++)
+    {
+        if (text[i] == text[length -1- i]) result = true; //Console.WriteLine($"{i} и {length - i} совпадают ");
+        else result=false;
+      
+    }
+    return result;
 }
-
-StringToArray(34567);
+Console.WriteLine("Напишите ряд символов");
+string text = Console.ReadLine();
+bool result = CheckPolindrom(text);
+if(result==true) Console.WriteLine("Это полиндром");
+else Console.WriteLine("Это не полтндром"); 
