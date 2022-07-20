@@ -3,10 +3,10 @@ Console.Clear();
 
 void Snail(int num)
 {
-    int[,] array = new int[num, num];
-    int count = 1;
-    int x = 0;
-    int y = 0;
+    // int[,] array = new int[num, num];
+    // int count = 1;
+    // int x = 0;
+    // int y = 0;
 
     while (x < num)//1-5 Прохождение первой строки квадрата  
     {
