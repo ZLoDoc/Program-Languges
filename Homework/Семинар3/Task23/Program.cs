@@ -8,7 +8,7 @@ int[] Cube(int a)
     int[] array = new int[a];
     for (int index = 0; index < array.Length; index++)
     {
-        array[index] = index * index * index;
+        array[index] = (index+1) * (index+1) * (index+1);
         //Console.WriteLine(array[index]);
     }
     return array;

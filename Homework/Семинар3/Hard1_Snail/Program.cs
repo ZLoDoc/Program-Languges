@@ -1,4 +1,5 @@
-﻿Console.Clear();
+﻿// Думаю как оптимизировать ¯\_(ツ)_/¯
+Console.Clear();
 
 void Snail(int num)
 {
@@ -7,147 +8,101 @@ void Snail(int num)
     int x = 0;
     int y = 0;
 
-    while (x < num)//1 Прохождение первой строки квадрата  ¯\_(ツ)_/¯
+    while (x < num)//1-5 Прохождение первой строки квадрата  
     {
-        Console.SetCursorPosition(x * 3, y);
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
         Console.Write($"{count,3}");
         count++;
         x++;
     }
-
-   
-   
-   
-    //2///////////////////////////////////////////////////////////////
+    //6-9///////////////////////////////////////////////////////////////
     x = x - 1; y = y + 1;
     while (y < num)
     {
-        Console.SetCursorPosition(x * 3, y);
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
         Console.Write($"{count,3}");
         count++;
         y++;
     }
-   
-        //3///////////////////////////////////////////////////////////////
+    //9-13///////////////////////////////////////////////////////////////
     x = x - 1; y = y - 1;
     while (x >= 0)
     {
-        Console.SetCursorPosition(x * 3, y);
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
         Console.Write($"{count,3}");
         count++;
         x--;
     }
-    Console.WriteLine("");
+    // Console.WriteLine("");
+    // Console.WriteLine($"x={x}");
+    // Console.WriteLine($"y={y}");
+    // Console.WriteLine($"count={count}");
+    //13-16////////////////////////////////////////////////////////////////
+    x = x + 1; y = y - 1;
+    while (y >= 1)
+    {
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
+        Console.WriteLine($"{count,3}");
+        count++;
+        y--;
+    }
+    // Console.WriteLine("");
+    // Console.WriteLine($"x={x}");
+    // Console.WriteLine($"y={y}");
+    // Console.WriteLine($"count={count}");
+    //16-19/////////////////////////////////////////////////////////
+    x = x + 1; y = y + 1;
+    while (x < num - 1)
+    {
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
+        Console.Write($"{count,3}");
+        count++;
+        x++;
+    }
+    //19-21/////////////////////////////////////////////////////////
+    x = x - 1; y = y + 1;
+    while (y < num - 1)
+    {
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
+        Console.Write($"{count,3}");
+        count++;
+        y++;
+    }
+    //21-23/////////////////////////////////////////////////////////
+    x = x - 1; y = y - 1;
+    while (x > 0)
+    {
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
+        Console.Write($"{count,3}");
+        count++;
+        x--;
+    }
+    // Console.WriteLine("");
+    // Console.WriteLine($"x={x}");
+    // Console.WriteLine($"y={y}");
+    // Console.WriteLine($"count={count}");
+    //23-24/////////////////////////////////////////////////////////
+    x = x + 1; y = y - 1;
+    while (y > 1)
+    {
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
+        Console.Write($"{count,3}");
+        count++;
+        y--;
+    }  
+    //24-25/////////////////////////////////////////////////////////
+x = x + 1; y = y + 1;
+    while (x < num-2)
+    {
+        Console.SetCursorPosition(10 + x * 3, 6 + y);
+        Console.Write($"{count,3}");
+        count++;
+        x++;
+    }
+     Console.WriteLine("");
     Console.WriteLine($"x={x}");
     Console.WriteLine($"y={y}");
-    Console.WriteLine($"count={count}");
-
-    //     //3////////////////////////////////////////////////////////////////
-    //     for (x = x - 1, y = y - 1; x >= 0; x--)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
-    //     //4//////////////////////////////////////////////////////////////////////
-    //     for (x = x + 1, y = y - 1; y >= 1; y--)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
-    //     //5////////////////////////////////////////////////////////////////
-    //     for (x = x + 1, y = y + 1; x < num - 1; x++)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
-    //     //6///////////////////////////////////////////////////////////////
-    //     for (x = x - 1, y = y + 2; y < num; y++)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
-    //     //7////////////////////////////////////////////////////////////////
-    //     for (x = x - 2, y = y - 2; x >= 0; x--)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
-    //     //8//////////////////////////////////////////////////////////////////////
-    //     for (x = x + 2, y = y - 2; y >= 2; y--)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
-    //     //9////////////////////////////////////////////////////////////////
-    //     for (x = x + 1, y = y + 1; x < num - 2; x++)
-    //     {
-    //         // array[x, y] = count;
-    //         // Console.Write(array[x, y]);
-
-
-    //         Console.SetCursorPosition(x, y);
-    //         Console.WriteLine(count);
-    //         count++;
-    //     }
-    //     // Console.WriteLine("");
-    //     // Console.WriteLine($"x={x}");
-    //     // Console.WriteLine($"y={y}");
-    //     // Console.WriteLine($"count={count}");
+    Console.WriteLine($"count={count}"); 
 }
 Snail(5);
 
