@@ -12,7 +12,7 @@ int[] Sum(string text)
 {
     int length = text.Length;
     int[] array = new int[length];
-    //var arr = "text".Split(',');
+    var arr = "text".Split(',');
     char comma = ',';
     char space = ' ';
     int j = 0;
