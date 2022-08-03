@@ -4,10 +4,6 @@
 // 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 // 6, 1, 33 -> [6, 1, 33]
 
-// Чтение строки 
-// запись строки в массив
-// вывод массива на экран
-
 int[] Sum(string text)
 {
     int length = text.Length;
@@ -20,38 +16,22 @@ int[] Sum(string text)
 
     for (int i = 0; i < length; i++)
     {
-        Console.WriteLine($"j={j}");
-        Console.WriteLine($"i={i}");
-
         if (text[i] == comma || text[i] == space)
         {
             array[j] = Convert.ToInt32(result);
-            Console.WriteLine($"Накопительный {array[j]}");
             result = String.Empty;
-
             j++;
         }
-        // else if (i == length)
-        // {
-        //     array[j] = Convert.ToInt32(result);
-        //     Console.WriteLine($"последний result  {array[j]}");
-        //     result = String.Empty;
-        //     ;
-        // }
         else if (text[i] != comma && text[i] != space) result = result + text[i];
-
-        Console.WriteLine($"result после {i} прохода - {result}");
-        Console.WriteLine($"сейчас идет {i} проход, длинна -{length}");
     }
     array[j] = Convert.ToInt32(result);
     return (array);
 }
 void PrintArray(int[] array)
 {
-    //for (int i = 0; i < array.Length; i++) //Console.WriteLine($" {array[i]}");
-    Console.WriteLine(string.Join(",", array));
+    for (int i = 0; i < array.Length; i++) Console.Write($" {array[i]}");
 }
-Console.WriteLine("Введите ряд чисел через запятую");
+Console.Write("Введите ряд чисел через запятую :");
 string? text = Console.ReadLine();
 int[] result = Sum(text);
 PrintArray(result);
