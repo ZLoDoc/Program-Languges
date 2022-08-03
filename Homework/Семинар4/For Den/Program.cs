@@ -1,0 +1,2 @@
+﻿
+var arr = "text".Split(',');
