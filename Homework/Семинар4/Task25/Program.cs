@@ -3,6 +3,22 @@
 // 3, 5 -> 243 (3⁵)
 // 2, 4 -> 16
 
+int Degree(int a, int b)
+{
+    int num = 1;
+    for (int i = 1; i <= b; i++)
+    {
+        num = num * a;
+        Console.WriteLine(num);
+    }
+    return (num);
+}
 
+Console.WriteLine("Введите число А :");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число B :");
+int b = Convert.ToInt32(Console.ReadLine());
+int result = Degree(a, b);
+Console.WriteLine($"Число {a} в степени {b} = {result} ");
 
 

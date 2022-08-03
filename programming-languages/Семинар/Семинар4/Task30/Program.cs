@@ -1,5 +1,5 @@
-﻿Console.WriteLine("Введите число: ");
-int x = Convert.ToInt32(Console.ReadLine());
+﻿// Задача30. Принимаем число N и заполняем массив с N
+//  элементами случайно нулями и еденицами
 
 int[] create_mas(int x)
 {
@@ -21,4 +21,7 @@ void PrintArray(int[] col)
         position++;
     }
 }
+Console.WriteLine("Введите число: ");
+int x = Convert.ToInt32(Console.ReadLine());
+
 PrintArray(create_mas(x));
