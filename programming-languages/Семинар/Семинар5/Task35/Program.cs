@@ -21,7 +21,7 @@ int FindNumber(int[] array)
     int count = 0;
     for (int i = 0; i <= array.Length-1; i++)
     {
-        if (array[i] > 10 && array[i] < 99) count++;
+        if (array[i] >= 10 && array[i] <= 99) count++;
         
     }
     return count;
