@@ -42,4 +42,4 @@ int[] array = RndArray(number);
 PrintArray(array);
 
 int result = MaxMin(array);
-Console.WriteLine($"В заданном массиве разница между наибольшим и наименьшим равна {result}");
+Console.WriteLine($"В массиве разница между наибольшим и наименьшим значением равна {result}");
