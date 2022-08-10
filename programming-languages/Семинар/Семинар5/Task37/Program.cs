@@ -16,40 +16,29 @@ int[] RndArray(int number)
 }
 
 
-int[] Chet(int[] array)
+int[] Multiple(int[] array)
 {
-    int[] chet = new int[array.Length / 2];
-    for (int i = 0; i <= array.Length / 2 - 1; i++)
+    int[] result = new int[array.Length / 2 + 1];
+    for (int i = 0; i < array.Length / 2; i++)
     {
-        chet[i] = array[i] * array[array.Length - i - 1];
+        result[i] += array[i] * array[array.Length - i - 1];
     }
-    return chet;
+    if (array.Length % 2 != 0) result[i] += array[array.Length / 2];
+    
+    return result;
 }
-// int[] nechet(int[] array)
-// {
-//     int[] chet = new int[array.Length / 2];
-//     for (int i = 0; i <= array.Length / 2 ; i++)
-//     {
-//         chet[i] = array[i] * array[array.Length - i - 1];
-//     }
-//     chet[array.Length - 1] = array[array.Lenght / 2] + 1;
-//     return chet;
+
 
 Console.WriteLine("Задайте длинну массива :");
 int arrayLenght = Convert.ToInt32(Console.ReadLine());
 int[] array = RndArray(arrayLenght);
-int lenght = array.Length;
-if (lenght % 2 == 0)
-    int[] multiple = Chet(array);
+int[] res = new int[array.Length / 2 + 1];
 
-else if (lenght % 2 != 0)
-    int[] multiple = Nechet(array);
-   
-    
-    
+res = Multiple(array);
 
 
 
 
-Console.WriteLine(" ");
-for (int i = 0; i <= result.Length - 1; i++) Console.Write($" {multiple[i]},");
+
+
+

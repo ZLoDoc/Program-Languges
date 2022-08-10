@@ -1,12 +1,4 @@
-﻿int[] list = new int[13];
-string result = String.Empty;
-
-for (int i = 0; i < list.Length; i++)
-{
-list[i] = new Random().Next(1, 20);
-}
-
-void PrintArray(int[] col)
+﻿void PrintArray(int[] col)
 {
 int count = col.Length;
 int position = 0;
@@ -16,8 +8,16 @@ Console.Write($"{col[position]} ");
 position++;
 }
 }
+
+int[] list = new int[13];
+string result = String.Empty;
+for (int i = 0; i < list.Length; i++)
+{
+list[i] = new Random().Next(1, 20);
+}
 PrintArray(list);
 Console.WriteLine();
+
 for (int i = 0; i < list.Length / 2; i++)
 {
 result += $"{list[i] * list[list.Length - i - 1]}, ";
