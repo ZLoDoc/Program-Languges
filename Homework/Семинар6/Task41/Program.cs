@@ -1,12 +1,14 @@
-﻿//  (необязательная) 
-//  Напишите программу, которая создает массив
-//  из введенных через запятую цифр и выводит этот массив на экран.
-// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
-// 6, 1, 33 -> [6, 1, 33]
+﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. 
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+// 0, 7, 8, -2, -2 -> 2
+
+// 1, -7, 567, 89, 223-> 3
 
 int[] Sum(string text)
 {
     int length = text.Length;
+    Console.WriteLine(length / 2);
     int[] array = new int[length / 2 + 1];
     char comma = ',';
     int j = 0;
@@ -36,16 +38,26 @@ int[] Sum(string text)
     return (resArr);
 }
 
-
-void PrintArray(int[] array)
+int PositiveNums(int[] array)
 {
-    for (int i = 0; i < array.Length; i++)
+    int count = 0;
+    for (int i = 0; i <= array.Length - 1; i++)
     {
-        Console.Write($" {array[i]}");
-        if (i < array.Length - 1) Console.Write(",");
+        if (array[i] > 0) count += 1;
     }
+    return count;
+
 }
+
 Console.Write("Введите ряд чисел через запятую :");
 string? text = Console.ReadLine();
-int[] result = Sum(text);
-PrintArray(result);
+if (text == "")
+{
+    Console.WriteLine("Вы не ввели ни одного числа: ");
+}
+else
+{
+int[] array = Sum(text);
+int count = PositiveNums(array);
+Console.WriteLine($" \nВ заданном массиве {count} чисел больше нуля.");
+}
