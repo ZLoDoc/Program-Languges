@@ -3,26 +3,31 @@
 // [1 2 3 4 5] -> [5 4 3 2 1]
 // [6 7 3 6] -> [6 3 7 6]
 
-int[] RndArray(int number)
+void PrintArray(int[] array)
 {
-    int[] array = new int[number];
-    for (int i = 0; i <= array.Length - 1; i++)
-        array[i] = new Random().Next(1, 11);
-        Console.WriteLine($"array{i}={array[i]},");
-    return array;
+for(int i=0;i<=array.Length-1;i++) Console.Write($"{array[i]} ");
 }
-
-// int[] Reverse(int[] array)
-// {
-//     int[] result = new int[array.Length];
-//     for (int i = 0; i <= array.Length - 1; i++)
-//     {
-//         result[i] = array.Length - 1 - i;
-//         Console.WriteLine(result[i]);
-//         return result;
-//     }
-// }
-Console.WriteLine("Введите длину массива");
-int num = Convert.ToInt32(Console.ReadLine());
+int[] RndArray(int num)
+{
+int[] array = new int[num];
+for (int i = 0; i < array.Length; i++)
+{
+array[i] = new Random().Next(1,11);
+}
+return array;
+}
+int []ReverseArray(int[]array)
+{
+    int []result=new int [array.Length];
+for (int i = 0; i <= array.Length-1; i++)
+{
+result[i]=array[array.Length-1-i];
+}
+return result;
+}
+Console.Write("Задайте длинну массива :");
+int num=Convert.ToInt32(Console.ReadLine());
 int[] array = RndArray(num);
-//int[] res = Reverse(array);
+PrintArray(array);
+Console.WriteLine();
+PrintArray(ReverseArray(array));

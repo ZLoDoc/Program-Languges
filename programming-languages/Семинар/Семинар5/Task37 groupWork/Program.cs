@@ -1,27 +1,34 @@
-﻿void PrintArray(int[] col)
+﻿// Задача37. Найдите произведение пар чисел в одномерном массиве.
+//  Парой считаем первый и последний элемент, второй и предпоследний и.т.д. 
+//  Результат запишем в другой массив. 
+// [1 2 3 4 5] -->5 8 3
+// [6 7 3 6]--> 36 21
+void PrintArray(int[] array)
 {
-int count = col.Length;
-int position = 0;
-while (position < count)
+for(int i=0;i<=array.Length-1;i++) Console.Write($"{array[i]} ");
+}
+int[] RndArray(int num)
 {
-Console.Write($"{col[position]} ");
-position++;
-}
-}
-
-int[] list = new int[13];
+int[] array = new int[num];
 string result = String.Empty;
-for (int i = 0; i < list.Length; i++)
+for (int i = 0; i < array.Length; i++)
 {
-list[i] = new Random().Next(1, 20);
+array[i] = new Random().Next(1,11);
 }
-PrintArray(list);
-Console.WriteLine();
+return array;
+}
 
-for (int i = 0; i < list.Length / 2; i++)
+Console.Write("Задайте длинну массива :");
+int num=Convert.ToInt32(Console.ReadLine());
+int[] array = RndArray(num);
+
+PrintArray(array);
+
+
+string result = String.Empty;
+for (int i = 0; i < array.Length / 2; i++)
 {
-result += $"{list[i] * list[list.Length - i - 1]}, ";
+result += $"{array[i] * array[array.Length - i - 1]}, ";
 }
-if (list.Length % 2 != 0) result += $"{list[list.Length / 2]}";
-
-Console.WriteLine(result);
+if (array.Length % 2 != 0) result += $"{array[array.Length / 2]}";
+Console.WriteLine($"\n{result}");

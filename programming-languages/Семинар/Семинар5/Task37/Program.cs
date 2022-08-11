@@ -3,38 +3,48 @@
 //  Результат запишем в другой массив. 
 // [1 2 3 4 5] -->5 8 3
 // [6 7 3 6]--> 36 21
+int GetArrayLength(int[] array)
+{
+    if (array.Length % 2 != 0)
+    {
+        return array.Length / 2 + 1;
+    }
+    return array.Length / 2;
+}
+
 int[] RndArray(int number)
 {
     int[] array = new int[number];
     for (int i = 0; i <= array.Length - 1; i++)
     {
-        array[i] = new Random().Next(0, 10);
-        Console.Write($" {array[i]},");
+        array[i] = new Random().Next(0,11);
     }
-    Console.WriteLine();
     return array;
 }
-
+void PrintArray(int[] array)
+{
+    for (int i = 0; i <= array.Length - 1; i++) Console.Write($" {array[i]}");
+}
 
 int[] Multiple(int[] array)
 {
-    int[] result = new int[array.Length / 2 + 1];
-    for (int i = 0; i < array.Length / 2; i++)
+    int[] res = new int[GetArrayLength(array)];
+    for (int i = 0; i <= array.Length / 2-1; i++)
     {
-        result[i] += array[i] * array[array.Length - i - 1];
+        res[i] = array[i] * array[array.Length - 1 - i];
+        Console.WriteLine ($"array[{i}] = {array[i]}  array[{array.Length - 1 - i}]= {array[array.Length - 1 - i]}" );
     }
-    if (array.Length % 2 != 0) result[i] += array[array.Length / 2];
-    
-    return result;
+    if (array.Length % 2 != 0) res[res.Length - 1] = array[array.Length / 2];
+    return res;
 }
-
 
 Console.WriteLine("Задайте длинну массива :");
 int arrayLenght = Convert.ToInt32(Console.ReadLine());
-int[] array = RndArray(arrayLenght);
-int[] res = new int[array.Length / 2 + 1];
+int[]array=RndArray(arrayLenght);
+PrintArray(array);
+Console.WriteLine();
+PrintArray(Multiple(array));
 
-res = Multiple(array);
 
 
 
