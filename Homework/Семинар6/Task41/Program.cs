@@ -8,7 +8,7 @@
 int[] Sum(string text)
 {
     int length = text.Length;
-    Console.WriteLine(length / 2);
+    //Console.WriteLine(length / 2);
     int[] array = new int[length / 2 + 1];
     char comma = ',';
     int j = 0;

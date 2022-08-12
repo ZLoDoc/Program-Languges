@@ -31,7 +31,7 @@ int[,] CreatArray(int num)
     for (int i=0;i<=num;i++)
     {
         Console.WriteLine($"Введите {i} строку: ");
-        Convert.ToIn
+        string Convert.ToIn
     }
     return array;
 }
