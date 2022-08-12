@@ -25,15 +25,28 @@
 // 1
 // Sample Output 2:
 // 4
-int[,]CreatArray()
+int[,] CreatArray(int num)
 {
-Console.Write("Введите размерность прямоугольной матрицы");
-Console.Write("Строк :");
-int str=Convert.ToInt32(Console.ReadLine());
-Console.Write("Столбцов :");
-int col=Convert.ToInt32(Console.ReadLine());
-int[,]array=new int[str,col];
-
-return array;
+    int[,] array = new int[num, num];
+    for (int i=0;i<=num;i++)
+    {
+        Console.WriteLine($"Введите {i} строку: ");
+        Convert.ToIn
+    }
+    return array;
 }
-int[,]array=new int[3,3] {{9,5,3},{0,7,-1},{-5,2,9}};
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i <= array.GetLength(0); i++)
+    {
+        for (int j = 0; j <= array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]}");
+        }
+
+    }
+}
+//int[,] array = new int[3, 3] { { 9, 5, 3 }, { 0, 7, -1 }, { -5, 2, 9 } };
+Console.Write("Введите размерность квадратной матрицы :");
+int num = Convert.ToInt32(Console.ReadLine());
+
