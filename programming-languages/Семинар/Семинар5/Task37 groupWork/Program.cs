@@ -7,21 +7,25 @@ void PrintArray(int[] array)
 {
 for(int i=0;i<=array.Length-1;i++) Console.Write($"{array[i]} ");
 }
+
 int[] RndArray(int num)
 {
 int[] array = new int[num];
-string result = String.Empty;
+
 for (int i = 0; i < array.Length; i++)
 {
 array[i] = new Random().Next(1,11);
 }
 return array;
 }
+
 Console.Write("Задайте длинну массива :");
 int num=Convert.ToInt32(Console.ReadLine());
 int[] array = RndArray(num);
 PrintArray(array);
+
 string result = String.Empty;
+
 for (int i = 0; i < array.Length / 2; i++)
 {
 result += $"{array[i] * array[array.Length - i - 1]}, ";
