@@ -28,7 +28,7 @@ for (int rows = 0; rows < array.GetLength(0); rows++)
 {
     for (int columns = 0; columns < array.GetLength(1); columns++)
     {
-        Console.Write("{0:00.00 }",array[rows, columns]);
+        Console.Write("{0:0.0 }",array[rows, columns]);
     }
     Console.WriteLine();
 }
