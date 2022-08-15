@@ -40,10 +40,10 @@ void SumOfColumns(int[,] array)
         for (int rows = 0; rows < array.GetLength(0); rows++)
         {
             sumColumns += array[rows, columns];
-            // Console.Write($"{sumColumns},{columns},{rows}|");
         }
 
         midleArithmetic = sumColumns / array.GetLength(0);
+        
         Console.Write("{0:0.00}; ", midleArithmetic);
         sumColumns = 0;
     }
@@ -55,5 +55,5 @@ Console.Write("Количество столбцов :");
 int b = Convert.ToInt32(Console.ReadLine());
 int[,] array = CreateRndArray(a, b);
 PrintArray(array);
-Console.WriteLine();
+Console.WriteLine("Среднее арифметическое каждого столбца: ");
 SumOfColumns(array);
