@@ -6,27 +6,29 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-int[,] CreateRndArray(int numM, int numN)
+double[,] CreateRndArray(int numM, int numN)
 {
-    int[,] resultArray = new int[numM, numN];
+    double[,] resultArray = new double[numM, numN];
     for (int rows = 0; rows < resultArray.GetLength(0); rows++)
     {
         for (int columns = 0; columns < resultArray.GetLength(1); columns++)
         {
-            resultArray[rows, columns] = new Random().Next(-9, 10);
+            double a=(new  Random().Next(-9,10));
+            double b=(new  Random().Next(1,10));
+            resultArray[rows, columns] = a/b;
         }
     }
 
     return resultArray;
 }
 
-void printArray(int[,]array)
+void printArray(double[,]array)
 {
 for (int rows = 0; rows < array.GetLength(0); rows++)
 {
     for (int columns = 0; columns < array.GetLength(1); columns++)
     {
-        Console.Write($"{array[rows, columns]} ");
+        Console.Write("{0:00.00 }",array[rows, columns]);
     }
     Console.WriteLine();
 }
@@ -36,6 +38,6 @@ Console.Write("Ведите M :");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Ведите N :");
 int n = Convert.ToInt32(Console.ReadLine());
-int[,] array = CreateRndArray(m, n);
+double[,] array = CreateRndArray(m, n);
 printArray(array);
 
