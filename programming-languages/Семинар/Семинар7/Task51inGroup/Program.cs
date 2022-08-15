@@ -48,11 +48,11 @@ void FindSumD1D2(int[,] matr)
             if (i == j) SumD1 = SumD1 + matr[i, j];
             if (i + j == m - 1) SumD2 += matr[i, j];
         }
-
     }
-
+    Console.WriteLine();
     Console.WriteLine("SumD1= " + SumD1);
     Console.WriteLine("SumD2= " + SumD2);
+    
 
 }
 try
