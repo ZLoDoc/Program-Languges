@@ -19,7 +19,7 @@ int[,] RndArray(int str, int col)
     {
         for (int columns = 0; columns < array.GetLength(1); columns++)
         {
-            array[rows, columns] = new Random().Next(0, 10);
+            array[rows, columns] = new Random().Next(0, 20);
         }
     }
     return array;
@@ -37,31 +37,32 @@ void PrintArray(int[,] array)
 }
 void FindValue(int[,] array)
 {
-    int expect = 0;
-    int count = 0;
+    // Находим максимальное значение массива
+    int maxNum = array[0, 0];
     for (int rows = 0; rows < array.GetLength(0); rows++)
     {
         for (int columns = 0; columns < array.GetLength(1); columns++)
         {
-
-            expect = array[rows, columns];
-
-            for (int i = 0; i < array.GetLength(0); i++)
-            {
-                for (int j = 0; j < array.GetLength(1); j++)
-                {
-                    if (expect == array[i, j]) count++;
-                }
-
-            }
-            Console.WriteLine($"Значение {expect} встречается {count} раз");
-
+            if (maxNum < array[rows, columns]) maxNum = array[rows, columns];
         }
-
+    }
+    //Формируем 1мерный массив размером равным максимальному значению 2мерного массива
+    int[] countArray = new int[maxNum+1];
+   //Накапливаем в 1мерном массиве под номером элемента равному значению исходного
+   // 2мерного массива то сколько раз встречается это значение
+    for (int rows = 0; rows < array.GetLength(0); rows++)
+    {
+        for (int columns = 0; columns < array.GetLength(1); columns++)
+        {
+            countArray[array[rows, columns]]++;
+        }
+    }
+    for (int i = 0; i <= countArray.Length - 1; i++)
+    {
+        // Выводим на консоль значения не пустых элементов
+        if (countArray[i] != 0) Console.WriteLine($"Значение {i} встречается {countArray[i]} раз");
     }
 }
-
-
 Console.Write("Количество строк : ");
 int str = Convert.ToInt32(Console.ReadLine());
 Console.Write("Количество столбцов : ");
