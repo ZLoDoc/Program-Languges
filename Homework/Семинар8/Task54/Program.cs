@@ -36,21 +36,17 @@ void PrintArray(int[,] array)
 int[,] OrderArray(int[,] array)
 {
     int temp = 0;
-    //int min=0;
     for (int rows = 0; rows < array.GetLength(0); rows++)
     {
-        for (int columns = 0; columns < array.GetLength(1); columns++)
+        for (int i = 0; i < array.GetLength(1); i++)
         {
-            for (int i = 0; i < array.GetLength(1); i++)
+            for (int j = 0; j < array.GetLength(1) - 1; j++)
             {
-                for (int j = 0; j < array.GetLength(1) - 1; j++)
+                if (array[rows, j] > array[rows, j + 1])
                 {
-                    if (array[rows, j] > array[rows, j + 1])
-                    {
-                        temp = array[rows, j + 1];
-                        array[rows, j + 1] = array[rows, j];
-                        array[rows, j] = temp;
-                    }
+                    temp = array[rows, j + 1];
+                    array[rows, j + 1] = array[rows, j];
+                    array[rows, j] = temp;
                 }
             }
         }
