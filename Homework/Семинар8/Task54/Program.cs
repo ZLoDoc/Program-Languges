@@ -33,7 +33,30 @@ void PrintArray(int[,] array)
         Console.WriteLine();
     }
 }
-int[,] OrderArray(int[,] array)
+
+
+int[,] OrderArrayMin(int[,] array)
+{
+    int temp = 0;
+    for (int rows = 0; rows < array.GetLength(0); rows++)
+    {
+        for (int i = 0; i < array.GetLength(1); i++)
+        {
+            for (int j = 0; j < array.GetLength(1) - 1; j++)
+            {
+                if (array[rows, j] < array[rows, j + 1])
+                {
+                    temp = array[rows, j + 1];
+                    array[rows, j + 1] = array[rows, j];
+                    array[rows, j] = temp;
+                }
+            }
+        }
+    }
+    return array;
+}
+
+int[,] OrderArrayMax(int[,] array)
 {
     int temp = 0;
     for (int rows = 0; rows < array.GetLength(0); rows++)
@@ -61,4 +84,8 @@ int b = Convert.ToInt32(Console.ReadLine());
 int[,] array = CreateRndArray(a, b);
 PrintArray(array);
 Console.WriteLine();
-PrintArray(OrderArray(array));
+Console.WriteLine("Упорядочивание строк по убыванию");
+PrintArray(OrderArrayMin(array));
+Console.WriteLine();
+Console.WriteLine("Упорядочивание строк по возрастанию");
+PrintArray(OrderArrayMax(array));
