@@ -47,9 +47,8 @@ void FindMinSumStringArray(int[,] array)
 
     int min = sumArray[0];
     int minIndex = 0;
-    for (int i = 0; i < sumArray.Length - 1; i++)
+    for (int i = 0; i < sumArray.Length; i++)
     {
-
         if (sumArray[i] <= min)
         {
             min = sumArray[i];

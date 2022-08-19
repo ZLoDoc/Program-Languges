@@ -19,7 +19,7 @@ int[,] RndArray(int str, int col)
     {
         for (int columns = 0; columns < array.GetLength(1); columns++)
         {
-            array[rows, columns] = new Random().Next(0, 20);
+            array[rows, columns] = new Random().Next(10, 21);
         }
     }
     return array;
