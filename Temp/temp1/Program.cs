@@ -1,20 +1,17 @@
 ﻿
-int[] tempArray = new int[5];
-for (int i = 0; i <= tempArray.Length - 1;)
+int[] tempArray = new int[10];
+for (int i = 0; i <= tempArray.Length - 1;i++)
 {
-    int count = 0;
-    int temp = new Random().Next(10, 19);
-    for (int j = 0; j <= tempArray.Length - 1; j++)
-    {
-        if (tempArray[j] == temp) count++;
-    }
-    if (count == 0)
-    {
-        tempArray[i] = temp;
-        i++;
-        count = 0;
-    }
+    tempArray[i] = new Random().Next(0, 5);
+    Console.Write($"{tempArray[i]} \t");
 }
-for (int n = 0; n <= tempArray.Length - 1; n++) Console.WriteLine(tempArray[n]);
 
+Array.Sort(tempArray);
+    Console.WriteLine();
+
+// for (int j = 0; j <= tempArray.Length - 1;j++)
+// {
+//     Console.Write($"{tempArray[j]} \t");
+// }
+Console.Write(Array.IndexOf(tempArray,3));
 
